@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:color_smash/src/components/ball.dart';
-import 'package:color_smash/src/components/wall.dart';
 import 'package:flame/game.dart';
-
 import 'package:flutter/material.dart';
+
+import 'components/ball.dart';
+import 'components/wall.dart';
 
 class ColorSmash extends FlameGame with HasCollisionDetection {
   static const double wallThickness = 20;
