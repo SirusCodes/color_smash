@@ -6,40 +6,43 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 class ColorSmash extends FlameGame with HasCollisionDetection {
-  static const double wallThickness = 10;
+  static const double wallThickness = 20;
+  static const List<Color> colors = [
+    Color(0xFF00FF00),
+    Color(0xFF0000FF),
+    Color(0xFFFF0000),
+    Color(0xFFFFFF00),
+  ];
 
   @override
   FutureOr<void> onLoad() {
     final walls = [
       // right wall
       Wall(
-        position: Vector2(size.x - 0, size.y / 2),
+        position: Vector2(size.x - wallThickness, size.y / 2),
         size: Vector2(wallThickness, size.y),
-        color: const Color(0xFF00FF00),
+        color: colors[0],
       ),
       // left wall
       Wall(
-        position: Vector2(0, size.y / 2),
+        position: Vector2(wallThickness, size.y / 2),
         size: Vector2(wallThickness, size.y),
-        color: const Color(0xFF0000FF),
+        color: colors[1],
       ),
       // top wall
       Wall(
-        position: Vector2(size.x / 2, 0),
+        position: Vector2(size.x / 2, wallThickness),
         size: Vector2(size.x, wallThickness),
-        color: const Color(0xFFFF0000),
+        color: colors[2],
       ),
       // bottom wall
       Wall(
-        position: Vector2(size.x / 2, size.y - 0),
+        position: Vector2(size.x / 2, size.y - wallThickness),
         size: Vector2(size.x, wallThickness),
-        color: const Color(0xFFFFFF00),
+        color: colors[3],
       ),
     ];
 
     addAll(walls);
   }
-
-  @override
-  bool get debugMode => true;
 }

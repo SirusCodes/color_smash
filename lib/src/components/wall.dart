@@ -15,7 +15,8 @@ class Wall extends RectangleComponent {
           size: size,
           paint: Paint()
             ..color = color
-            ..style = PaintingStyle.fill,
+            ..style = PaintingStyle.fill
+            ..maskFilter = const MaskFilter.blur(BlurStyle.solid, 10),
         );
 
   final Color color;
