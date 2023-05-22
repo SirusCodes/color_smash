@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:math';
 
+import 'package:color_smash/src/components/ball.dart';
 import 'package:color_smash/src/components/wall.dart';
 import 'package:flame/game.dart';
 
@@ -44,5 +46,11 @@ class ColorSmash extends FlameGame with HasCollisionDetection {
     ];
 
     addAll(walls);
+    addBallToGame();
+  }
+
+  void addBallToGame() {
+    final color = colors[Random().nextInt(colors.length)];
+    add(Ball(position: Vector2(size.x / 2, size.y / 2), color: color));
   }
 }
