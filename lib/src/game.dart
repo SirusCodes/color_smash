@@ -53,4 +53,6 @@ class ColorSmash extends FlameGame with HasCollisionDetection {
     final color = colors[Random().nextInt(colors.length)];
     add(Ball(position: Vector2(size.x / 2, size.y / 2), color: color));
   }
+
+  void gameOver() {}
 }
