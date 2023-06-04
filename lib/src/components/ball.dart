@@ -101,7 +101,7 @@ class Ball extends CircleComponent
     gameRef.add(
       ParticleSystemComponent(
         particle: Particle.generate(
-          count: 5,
+          count: 2,
           lifespan: 1,
           generator: (i) => AcceleratedParticle(
             position: position.clone() +
@@ -113,10 +113,7 @@ class Ball extends CircleComponent
             speed: (Vector2.random() - Vector2.random()) * shootSpeed / 3,
             child: CircleParticle(
               radius: Random().nextDouble() * 5,
-              paint: Paint()
-                ..color = color
-                ..style = PaintingStyle.fill
-                ..maskFilter = const MaskFilter.blur(BlurStyle.solid, 1),
+              paint: Paint()..color = color,
             ),
           ),
         ),
